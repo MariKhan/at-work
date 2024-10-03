@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { FlexDir } from "@/styled-components/styles";
 import { BackIcon } from "@/styled-components/Icons.styled";
 import {
   H5Text,
   ProfileContainer,
+  ProfileContent,
   ProfileHeader,
 } from "@/view/profile/Profile.styled";
 import { ProfilePhotoBlock } from "@/view/profile/components/ProfilePhotoBlock";
@@ -31,12 +31,12 @@ export const Profile = () => {
         <BackIcon />
         <H5Text>Назад</H5Text>
       </ProfileHeader>
-      <FlexDir gap="40px">
+      <ProfileContent>
         <ProfilePhotoBlock onSectionChange={handleSectionChange} />
         <ProfileInformationBlock>
           {activeSectionContent}
         </ProfileInformationBlock>
-      </FlexDir>
+      </ProfileContent>
     </ProfileContainer>
   );
 };

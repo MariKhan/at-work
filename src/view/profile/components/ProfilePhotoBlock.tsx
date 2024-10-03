@@ -1,23 +1,17 @@
 import React, { useState, FC } from "react";
-import styled from "@emotion/styled";
 import { Divider } from "@mui/material";
-import { PhotoBlockStyled, PhotoStyled } from "@/view/profile/Profile.styled";
+import {
+  DividerStyled,
+  PhotoBlockStyled,
+  PhotoStyled,
+  Section,
+} from "@/view/profile/Profile.styled";
 import Photo from "../../../../public/static/images/Photo.jpeg";
 import { InformationContent } from "@/view/profile/components/InformationContent";
 
 interface ProfilePhotoBlockProps {
   onSectionChange: (content: React.ReactNode) => void;
 }
-
-const Section = styled.div<{ isActive: boolean }>`
-  color: ${({ isActive }) => (isActive ? "#161616" : "#9C9C9C")};
-  font-weight: ${({ isActive }) => (isActive ? "600" : "500")};
-  cursor: pointer;
-
-  &:hover {
-    color: #22a0bc;
-  }
-`;
 
 export const ProfilePhotoBlock: FC<ProfilePhotoBlockProps> = ({
   onSectionChange,
@@ -59,7 +53,7 @@ export const ProfilePhotoBlock: FC<ProfilePhotoBlockProps> = ({
           >
             {section.label}
           </Section>
-          <Divider />
+          <DividerStyled />
         </React.Fragment>
       ))}
     </PhotoBlockStyled>

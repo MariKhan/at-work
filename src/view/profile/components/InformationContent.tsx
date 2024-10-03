@@ -5,6 +5,7 @@ import { Dialog, Divider } from "@mui/material";
 import { User, useUsersQuery } from "@/store/features/rootPageApi";
 import { Spinner } from "@/components/ui/Spinners";
 import { SaveModal } from "@/view/profile/components/SaveModal";
+import { InputBlockStyled } from "@/view/profile/Profile.styled";
 
 interface InformationContentProps {
   profileId: string;
@@ -67,20 +68,20 @@ export const InformationContent: FC<InformationContentProps> = ({
 
   return (
     <>
-      <FlexDir dir="column" color="#FDFDFD" width="420px">
+      <FlexDir dir="column" color="#FDFDFD" width="100%">
         <Text fontSize="24px" fontWeight={600} lineHeight="32.78px" mb="16px">
           Данные профиля
         </Text>
         <Divider style={{ marginBottom: "24px" }} />
         {!isLoading ? (
-          <>
+          <InputBlockStyled>
             <Input
               title="Имя"
               value={userInformationData?.name}
               onChange={(e) =>
                 updateUserInformationFields({ name: e.target.value })
               }
-              borderColor={errorFields.username ? "red" : "#dadada"}
+              borderColor={errorFields.name ? "red" : "#dadada"}
             />
 
             <Input
@@ -98,7 +99,7 @@ export const InformationContent: FC<InformationContentProps> = ({
               onChange={(e) =>
                 updateUserInformationFields({ email: e.target.value })
               }
-              borderColor={errorFields.username ? "red" : "#dadada"}
+              borderColor={errorFields.email ? "red" : "#dadada"}
             />
             <Input
               title="Город"
@@ -111,7 +112,7 @@ export const InformationContent: FC<InformationContentProps> = ({
                   },
                 })
               }
-              borderColor={errorFields.username ? "red" : "#dadada"}
+              borderColor={errorFields.city ? "red" : "#dadada"}
             />
             <Input
               title="Телефон"
@@ -132,7 +133,7 @@ export const InformationContent: FC<InformationContentProps> = ({
                   },
                 })
               }
-              borderColor={errorFields.username ? "red" : "#dadada"}
+              borderColor={errorFields.companyName ? "red" : "#dadada"}
             />
             <FlexDir>
               <Button onClick={handleSaveClick}>Сохранить</Button>
@@ -152,7 +153,7 @@ export const InformationContent: FC<InformationContentProps> = ({
             >
               <SaveModal toggleModal={toggleModal} />
             </Dialog>
-          </>
+          </InputBlockStyled>
         ) : (
           <Spinner />
         )}

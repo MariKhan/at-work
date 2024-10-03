@@ -4,11 +4,13 @@ import { User } from "@/store/features/rootPageApi";
 interface UsersState {
   activeUsers: User[];
   archivedUsers: User[];
+  selectedUserId: number | null;
 }
 
 const initialState: UsersState = {
   activeUsers: [],
   archivedUsers: [],
+  selectedUserId: null,
 };
 
 const usersSlice = createSlice({
@@ -17,6 +19,9 @@ const usersSlice = createSlice({
   reducers: {
     setActiveUsers: (state, action: PayloadAction<User[]>) => {
       state.activeUsers = action.payload;
+    },
+    setSelectedUserId: (state, action: PayloadAction<number>) => {
+      state.selectedUserId = action.payload;
     },
     archiveUser: (state, action: PayloadAction<number>) => {
       const userToArchive = state.activeUsers.find(
@@ -48,6 +53,11 @@ const usersSlice = createSlice({
   },
 });
 
-export const { setActiveUsers, archiveUser, removeUser, restoreUser } =
-  usersSlice.actions;
+export const {
+  setActiveUsers,
+  setSelectedUserId,
+  archiveUser,
+  removeUser,
+  restoreUser,
+} = usersSlice.actions;
 export const usersReducer = usersSlice.reducer;

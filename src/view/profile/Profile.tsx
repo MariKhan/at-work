@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import { useSelector } from "react-redux";
 import { FlexDir } from "@/styled-components/styles";
 import { BackIcon } from "@/styled-components/Icons.styled";
 import {
@@ -9,14 +10,16 @@ import {
 import { ProfilePhotoBlock } from "@/view/profile/components/ProfilePhotoBlock";
 import { ProfileInformationBlock } from "@/view/profile/components/ProfileInformationBlock";
 import { useRouter } from "next/navigation";
+import { InformationContent } from "@/view/profile/components/InformationContent";
 
-interface ProfileProps {}
-
-export const Profile: FC<ProfileProps> = () => {
+export const Profile = () => {
   const router = useRouter();
+  const selectedUserId = useSelector((state) => state.users.selectedUserId);
 
   const [activeSectionContent, setActiveSectionContent] =
-    useState<React.ReactNode>(null);
+    useState<React.ReactNode>(
+      <InformationContent profileId={selectedUserId} />,
+    );
 
   const handleSectionChange = (content: React.ReactNode) => {
     setActiveSectionContent(content);
@@ -28,7 +31,7 @@ export const Profile: FC<ProfileProps> = () => {
         <BackIcon />
         <H5Text>Назад</H5Text>
       </ProfileHeader>
-      <FlexDir>
+      <FlexDir gap="40px">
         <ProfilePhotoBlock onSectionChange={handleSectionChange} />
         <ProfileInformationBlock>
           {activeSectionContent}

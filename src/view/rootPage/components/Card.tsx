@@ -12,6 +12,8 @@ import {
 } from "@/view/rootPage/RootPage.styled";
 import React from "react";
 import { useRouter } from "next/navigation";
+import { setSelectedUserId } from "@/store/slices/userSlices";
+import { useDispatch } from "react-redux";
 
 interface CardProps {
   user: User;
@@ -59,9 +61,10 @@ export const Card = ({
   onRemove,
 }: CardProps) => {
   const router = useRouter();
-
+  const dispatch = useDispatch();
   const EditHandler = () => {
-    router.push(`${"/profile".replace(":profileId", String(user.id))}`);
+    dispatch(setSelectedUserId(user.id));
+    router.push("/profile");
   };
   const ArchiveHandler = () => {
     onArchive(user.id);

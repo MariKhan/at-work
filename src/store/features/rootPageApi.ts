@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 
 export interface User {
   id: number;
+  name: string;
   username: string;
   company: { name: string };
   address: { city: string };
+  email: string;
+  phone: string;
 }
 
 export const useUsersQuery = () => {

@@ -5,25 +5,6 @@ import { PhotoBlockStyled, PhotoStyled } from "@/view/profile/Profile.styled";
 import Photo from "../../../../public/static/images/Photo.jpeg";
 import { InformationContent } from "@/view/profile/components/InformationContent";
 
-const sections = [
-  {
-    id: "profile",
-    label: "Данные профиля",
-    content: <InformationContent />,
-  },
-  {
-    id: "workspace",
-    label: "Рабочее пространство",
-    content: "Контент для рабочего пространства",
-  },
-  { id: "privacy", label: "Приватность", content: "Контент для приватности" },
-  {
-    id: "security",
-    label: "Безопасность",
-    content: "Контент для безопасности",
-  },
-];
-
 interface ProfilePhotoBlockProps {
   onSectionChange: (content: React.ReactNode) => void;
 }
@@ -41,6 +22,24 @@ const Section = styled.div<{ isActive: boolean }>`
 export const ProfilePhotoBlock: FC<ProfilePhotoBlockProps> = ({
   onSectionChange,
 }) => {
+  const sections = [
+    {
+      id: "profile",
+      label: "Данные профиля",
+      content: <InformationContent />,
+    },
+    {
+      id: "workspace",
+      label: "Рабочее пространство",
+      content: "Контент для рабочего пространства",
+    },
+    { id: "privacy", label: "Приватность", content: "Контент для приватности" },
+    {
+      id: "security",
+      label: "Безопасность",
+      content: "Контент для безопасности",
+    },
+  ];
   const [activeSection, setActiveSection] = useState("profile");
 
   const handleClick = (sectionId: string, content: React.ReactNode) => {

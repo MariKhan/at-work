@@ -126,3 +126,26 @@ export const FlexDir = styled.div<{
     cursor: ${cursor};
   `};
 `;
+
+export const Button = styled.button`
+  background-color: #161616;
+  color: #f4f4f4;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 42px;
+  font-size: 16px;
+  line-height: 21.86px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f4f4f4;
+    color: #595959;
+    border: 1px solid #161616;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+`;

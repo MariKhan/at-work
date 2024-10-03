@@ -10,7 +10,15 @@ export const ProfileInformationBlock: FC<ProfileInformationBlockProps> = ({
 }) => {
   return (
     <>
-      <FlexDir>{children}</FlexDir>
+      <FlexDir
+        bgColor="#FFF"
+        width="100%"
+        borderRadius="16px"
+        padding="40px"
+        gap="24px"
+      >
+        {children}
+      </FlexDir>
     </>
   );
 };

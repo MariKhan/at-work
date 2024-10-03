@@ -1,8 +1,8 @@
-import {Landing} from "@/view/landing/Landing";
+"use client";
+import { RootPage } from "@/view/rootPage";
 
-const LandingPage = () => {
-
-  return <Landing />;
+const Home = () => {
+  return <RootPage />;
 };
 
-export default LandingPage;
+export default Home;

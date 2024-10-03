@@ -19,6 +19,7 @@ export const ProfileHeader = styled.div`
   padding: 20px;
   gap: 8px;
   justify-content: flex-start;
+  cursor: pointer;
 
   @media screen and (max-width: 700px) and (min-width: 375px) {
     padding: 11px 16px 11px 16px;

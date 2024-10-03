@@ -3,12 +3,13 @@ import styled from "@emotion/styled";
 import { Divider } from "@mui/material";
 import { PhotoBlockStyled, PhotoStyled } from "@/view/profile/Profile.styled";
 import Photo from "../../../../public/static/images/Photo.jpeg";
+import { InformationContent } from "@/view/profile/components/InformationContent";
 
 const sections = [
   {
     id: "profile",
     label: "Данные профиля",
-    content: "Контент для данных профиля",
+    content: <InformationContent />,
   },
   {
     id: "workspace",

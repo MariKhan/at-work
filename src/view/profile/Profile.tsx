@@ -8,10 +8,13 @@ import {
 } from "@/view/profile/Profile.styled";
 import { ProfilePhotoBlock } from "@/view/profile/components/ProfilePhotoBlock";
 import { ProfileInformationBlock } from "@/view/profile/components/ProfileInformationBlock";
+import { useRouter } from "next/navigation";
 
 interface ProfileProps {}
 
 export const Profile: FC<ProfileProps> = () => {
+  const router = useRouter();
+
   const [activeSectionContent, setActiveSectionContent] =
     useState<React.ReactNode>(null);
 
@@ -21,7 +24,7 @@ export const Profile: FC<ProfileProps> = () => {
 
   return (
     <ProfileContainer>
-      <ProfileHeader>
+      <ProfileHeader onClick={() => router.push("/")}>
         <BackIcon />
         <H5Text>Назад</H5Text>
       </ProfileHeader>

@@ -6,7 +6,7 @@ interface InformationContentProps {}
 export const InformationContent: FC<InformationContentProps> = () => {
   return (
     <>
-      <FlexDir>Данные профиля</FlexDir>
+      <FlexDir> Данные профиля</FlexDir>
     </>
   );
 };

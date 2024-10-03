@@ -1,3 +1,4 @@
+"use client";
 import { FC, MouseEvent, useState } from "react";
 import { Menu as MuiMenu } from "@mui/material";
 import { MenuItem as MuiMenuItem } from "./Menu.styled";

@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import React from "react";
 import { ReduxProvider } from "@/redux/provider";
 import GlobalStyles from "@/styled-components/GlobalStyle";
+import { Header } from "@/view/header";
 
 const manrope = Manrope({
   weight: "500",
@@ -26,6 +27,8 @@ export default function RootLayout({
     <html lang={locale}>
       <body className={manrope.className}>
         <GlobalStyles />
+        <Header />
+
         <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>

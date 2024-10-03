@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+"use client";
 import { HeaderStyled } from "@/view/rootPage/RootPage.styled";
 import { FlexDir, Text } from "@/styled-components/styles";
 import {
@@ -7,10 +7,9 @@ import {
   NotificationIcon,
 } from "@/styled-components/Icons.styled";
 import Image from "next/image";
-import Avatar from "../../../../public/static/images/My.jpg";
+import Avatar from "../../../public/static/images/My.jpg";
 import styled from "@emotion/styled";
 
-interface HeaderProps {}
 const UsernameText = styled(Text)`
   color: #595959;
 
@@ -18,7 +17,7 @@ const UsernameText = styled(Text)`
     display: none;
   }
 `;
-export const Header: FC<HeaderProps> = () => {
+export const Header = () => {
   return (
     <>
       <HeaderStyled>

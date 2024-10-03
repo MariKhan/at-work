@@ -11,6 +11,7 @@ import {
   H4Text,
 } from "@/view/rootPage/RootPage.styled";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 interface CardProps {
   user: User;
@@ -57,7 +58,11 @@ export const Card = ({
   onActive,
   onRemove,
 }: CardProps) => {
-  const EditHandler = () => {};
+  const router = useRouter();
+
+  const EditHandler = () => {
+    router.push(`${"/profile".replace(":profileId", String(user.id))}`);
+  };
   const ArchiveHandler = () => {
     onArchive(user.id);
   };

@@ -22,3 +22,9 @@ export const MenuIcon = styled.div`
     background: url("/static/icons/MenuHover.svg") no-repeat;
   }
 `;
+
+export const BackIcon = styled.div`
+  background: url("/static/icons/ArrowLeft.svg") no-repeat;
+  width: 21px;
+  height: 21px;
+`;

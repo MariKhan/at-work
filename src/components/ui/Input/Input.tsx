@@ -15,6 +15,7 @@ export interface IInput {
   placeholderColor?: string;
   readOnly?: boolean;
   style?: CSSProperties;
+  borderColor?: string;
 }
 
 const Input: React.ForwardRefRenderFunction<HTMLInputElement, IInput> = (
@@ -30,6 +31,7 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, IInput> = (
     onClick,
     readOnly,
     style,
+    borderColor,
   },
   ref,
 ) => {
@@ -48,6 +50,7 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, IInput> = (
         textAlign={textAlign}
         readOnly={readOnly}
         style={style}
+        borderColor={borderColor}
       />
     </>
   );

@@ -16,8 +16,9 @@ export const InputTitle = styled.p`
 export const StyledInput = styled.input<{
   mb?: string;
   height?: string;
+  borderColor?: string;
 }>`
-  ${({ mb, height }) => css`
+  ${({ mb, height, borderColor }) => css`
     margin-bottom: ${mb || "24px"};
     position: relative;
     padding: 8px 16px;
@@ -28,7 +29,7 @@ export const StyledInput = styled.input<{
     font-size: 16px;
     line-height: 21.86px;
     font-weight: 500;
-    border: 2px solid #dadada;
+    border: 2px solid ${borderColor};
     border-radius: 50px;
     outline: none;
     transition: 0.3s;

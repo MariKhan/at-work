@@ -28,3 +28,15 @@ export const BackIcon = styled.div`
   width: 21px;
   height: 21px;
 `;
+
+export const CloseIcon = styled.div`
+  background: url("/static/icons/Close.svg") no-repeat;
+  width: 28px;
+  height: 28px;
+`;
+
+export const CheckedBoxIcon = styled.div`
+  background: url("/static/icons/CheckedBox.svg") no-repeat;
+  width: 84px;
+  height: 84px;
+`;

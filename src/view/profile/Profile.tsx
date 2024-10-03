@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { FlexDir } from "@/styled-components/styles";
 import { BackIcon } from "@/styled-components/Icons.styled";
